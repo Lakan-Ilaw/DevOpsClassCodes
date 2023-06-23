@@ -15,13 +15,6 @@ pipeline {
 			}		
 		}
 		
-		stage ('Validation') {
-			step {
-				echo "Validation step."
-				sh 'mvn validate'
-			}
-		}
-		
 		stage ('CMD Test') {
 			step {
 				echo "PMD static code analysis initiated!"
@@ -54,6 +47,20 @@ pipeline {
 					}
 				}
 			}		
+		}
+		
+		stage ('Build') {
+			step {
+				echo "Building the package!"
+				sh 'mvn package'
+			}		
+		}
+
+		stage ('Validation') {
+			step {
+				echo "Validation step."
+				sh 'mvn validate'
+			}
 		}
 
 	}
