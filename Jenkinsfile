@@ -41,7 +41,7 @@ pipeline {
 						}
 					}
 				}
-				stepss ('STATUS') {
+				stage ('STATUS') {
 					steps {
 						echo "TEST INITIANTED"
 					}
