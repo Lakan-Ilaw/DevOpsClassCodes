@@ -34,7 +34,7 @@ pipeline {
 							echo "The test has completed."
 						}
 						success {
-							echo "The Unit Test is a success!
+							echo "The Unit Test is a success!"
 						}
 						failure {
 							echo "It was a FAILURE!"
