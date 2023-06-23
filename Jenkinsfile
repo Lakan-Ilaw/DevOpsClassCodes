@@ -2,21 +2,21 @@ pipeline {
 	agent any
 	stages {
 		stage ('GIT Clone') {
-			step {
+			steps {
 				echo "Cloning the GIT Repository!"
 				git 'https://github.com/Lakan-Ilaw/DevOpsClassCodes.git'
 			}		
 		}
 
 		stage ('Compile') {
-			step {
+			steps {
 				echo "Compiling the package!"
 				sh 'mvn clean compile'
 			}		
 		}
 		
 		stage ('CMD Test') {
-			step {
+			steps {
 				echo "PMD static code analysis initiated!"
 				sh 'mvn pmd:pmd'
 			}		
@@ -25,7 +25,7 @@ pipeline {
 		stage ('Unit Test') {
 			parallel {
 				stage ('Actual Unit Test') {
-					step {
+					steps {
 						echo "Unit test initiated!"
 						sh 'mvn test'
 					}
@@ -41,8 +41,8 @@ pipeline {
 						}
 					}
 				}
-				steps ('STATUS') {
-					step {
+				stepss ('STATUS') {
+					steps {
 						echo "TEST INITIANTED"
 					}
 				}
@@ -50,15 +50,15 @@ pipeline {
 		}
 		
 		stage ('Build') {
-			step {
+			steps {
 				echo "Building the package!"
 				sh 'mvn package'
 			}		
 		}
 
 		stage ('Validation') {
-			step {
-				echo "Validation step."
+			steps {
+				echo "Validation steps."
 				sh 'mvn validate'
 			}
 		}
