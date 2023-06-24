@@ -19,6 +19,7 @@ pipeline {
 			steps {
 				echo "PMD static code analysis initiated!"
 				sh 'mvn pmd:pmd'
+				recordIssues(tools: [pmdParser()])
 			}		
 		}
 		
