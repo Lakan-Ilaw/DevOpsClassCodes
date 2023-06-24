@@ -15,7 +15,7 @@ pipeline {
 			}		
 		}
 		
-		stage ('CMD Test') {
+		stage ('PMD Test') {
 			steps {
 				echo "PMD static code analysis initiated!"
 				sh 'mvn pmd:pmd'
