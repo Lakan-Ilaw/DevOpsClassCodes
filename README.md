@@ -1,8 +1,7 @@
 ##Addressbook Tutorialll
 = by==================== hello eeeee
 This tutorial teaches you some of the basic concepts in [Vaadin Framework](https://vaadin.com). It is meant to be
-a fast read for learning how to get started -ddd not an example on =sasdasdasdasd hello
- akshat  second edit hello
+a fast read for learning how to get started.
 Running the example from the command line
 -------------------
 ```
